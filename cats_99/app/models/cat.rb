@@ -13,5 +13,10 @@
 #
 class Cat < ApplicationRecord
     
+    def self.age 
+        birth_year = @cat.birth_date.year
+        current_year = DateTime.now.year 
+        current_year - birth_year
+    end
     
 end
