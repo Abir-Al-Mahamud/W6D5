@@ -14,10 +14,10 @@ require 'action_view'
 #
 class Cat < ApplicationRecord
     include ActionView::Helpers::DateHelper
-    COLORS = [:red, :blue, :green]
+    COLORS = %w(red blue green).freeze
     
     validates :birth_date, presence: true
-    validates :color, presence: true, inclusion: {in: COLORS}
+    validates :color, presence: true, inclusion: COLORS
     validates :name, presence: true
     validates :sex, presence: true, inclusion: {in: %w(M F)}
     validates :description, presence: true
