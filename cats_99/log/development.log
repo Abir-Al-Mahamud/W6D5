@@ -142,3 +142,10 @@ Migrating to CreateCatss (20210402184916)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mCat Create (1.1ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2000-01-01"], ["color", "Red"], ["name", "Wallace"], ["sex", "M"], ["description", "Good guy"], ["created_at", "2021-04-02 19:45:34.690277"], ["updated_at", "2021-04-02 19:45:34.690277"]]
   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCat Load (2.0ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (7.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2015-01-20"], ["color", "red"], ["name", "Morris"], ["sex", "m"], ["description", "Good guy"], ["created_at", "2021-04-02 20:10:20.598894"], ["updated_at", "2021-04-02 20:10:20.598894"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[36mCat Load (1.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" ORDER BY "cats"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" ORDER BY "cats"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

@@ -1,3 +1,4 @@
+require 'action_view'
 # == Schema Information
 #
 # Table name: cats
@@ -12,11 +13,17 @@
 #  updated_at  :datetime         not null
 #
 class Cat < ApplicationRecord
+    include ActionView::Helpers::DateHelper
+    COLORS = [:red, :blue, :green]
     
-    def self.age 
-        birth_year = @cat.birth_date.year
-        current_year = DateTime.now.year 
-        current_year - birth_year
+    validates :birth_date, presence: true
+    validates :color, presence: true, inclusion: {in: COLORS}
+    validates :name, presence: true
+    validates :sex, presence: true, inclusion: {in: %w(M F)}
+    validates :description, presence: true
+
+    def age 
+        time_ago_in_words(birth_date)
     end
     
 end
